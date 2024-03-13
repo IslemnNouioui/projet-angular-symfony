@@ -1,0 +1,44 @@
+.button:hover {
+    background-color: pink;
+}
+
+
+/* marque.component.css */
+
+.marque-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.marque-item {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.marque-item:hover {
+    transform: scale(1.05);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}

@@ -1,0 +1,45 @@
+<!-- app-navbar.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarTogglerDemo01">
+
+        <div class="rounded mx-auto d-block">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="actif" routerLink="/acceuil"> ACCEUIL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="actif" routerLink="/marque">MARQUE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="actif" routerLink="/produit">PRODUIT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="actif" routerLink="/promo">PROMO</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="search-bar d-flex align-items-center">
+            <button class="btn btn-outline-secondary btn-sm" [routerLink]="['/panier']">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+
+            <form autocomplete="off" #form="ngForm" (submit)="sendName(form)">
+                <div class="form-group mb-0">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="yourName" [(ngModel)]="yourName">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-success btn-sm" routerLink="/recherche">Rechercher</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>

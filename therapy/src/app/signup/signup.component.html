@@ -1,0 +1,71 @@
+<!-- signup.component.html -->
+<section>
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col">
+                <div class="card card-registration my-4 bg-dark" style="border-radius: 15px; box-shadow: 0 0 10px rgba(246, 238, 236, 0.8);">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img src="../../../assets/makeup-removebg-preview.png" alt="Sample photo" class="img-fluid" style="border-top-left-radius: 15px; border-bottom-left-radius: 15px;" />
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-white">
+                                <h3 class="mb-5 text-uppercase">S'INSCRIRE</h3>
+                                <form [formGroup]="myForm" (submit)="submitForm()">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input type="text" formControlName="nom" class="form-control form-control-lg" required />
+                                                <label class="form-label" for="form3Example1m">Nom</label>
+                                                <div *ngIf="myForm.controls['nom'].invalid && (myForm.controls['nom'].dirty || myForm.controls['nom'].touched)" class="text-danger">
+                                                    Nom obligatoire
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" formControlName="email" class="form-control form-control-lg" />
+                                        <label class="form-label" for="form3Example8">Email</label>
+                                        <div *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].dirty || myForm.controls['email'].touched)" class="text-danger">
+                                            <div *ngIf="myForm.controls['email']">L'e-mail doit être valide.</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="password" formControlName="motdepasse" class="form-control form-control-lg" />
+                                        <label class="form-label" for="form3Example8">Mot de passe</label>
+                                        <div *ngIf="myForm.controls['motdepasse'].invalid && (myForm.controls['motdepasse'].dirty || myForm.controls['motdepasse'].touched)" class="text-danger">
+                                            <div *ngIf="myForm.controls['motdepasse']">Mot de passe doit être valide (Minimum 8 caractères, Caractère majuscule, Caractère minuscule, Nombre et un Caractère speciale).</div>
+                                        </div>
+                                    </div>
+                                    <!-- Date de Naissance -->
+                                    <div class="form-outline mb-4">
+                                        <input type="date" formControlName="dob" class="form-control form-control-lg" />
+                                        <label class="form-label" for="dob">Date de Naissance</label>
+                                        <div *ngIf="myForm.controls['dob'].invalid && (myForm.controls['dob'].dirty || myForm.controls['dob'].touched)" class="text-danger">
+                                            Date de Naissance obligatoire.
+                                        </div>
+                                    </div>
+
+                                    <!-- Sexe -->
+                                    <div class="form-group">
+                                        <label>Sexe</label>
+                                        <div class="form-check">
+                                            <input type="radio" formControlName="gender" value="male" id="male" class="form-check-input" />
+                                            <label for="male" class="form-check-label">Homme</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" formControlName="gender" value="female" id="female" class="form-check-input" />
+                                            <label for="female" class="form-check-label">Femme</label>
+                                        </div>
+                                        <div *ngIf="myForm.controls['gender'].invalid && (myForm.controls['gender'].dirty || myForm.controls['gender'].touched)" class="text-danger">
+                                            Sexe obligatoire.
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <button class="btn btn-outline-light btn-lg px-5" type="submit">S'inscrire</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>

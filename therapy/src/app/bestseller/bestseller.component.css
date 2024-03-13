@@ -1,0 +1,23 @@
+body {
+    font-family: sans-serif;
+    background-color: white;
+    margin: 0;
+}
+
+.gallery {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+}
+
+ul {
+    list-style: none;
+}

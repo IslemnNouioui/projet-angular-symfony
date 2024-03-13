@@ -1,0 +1,26 @@
+<div *ngIf="products">
+    <h1>NOS PRODUITS </h1>
+
+    <div class="gallery">
+        <div class="content" *ngFor="let product of products" style="background-color: #F6EEEC; ">
+            <img [src]="product.image" id="image">
+            <h5>{{product.nom}} </h5>
+            <h5>{{product.description}}</h5>
+
+            <ng-container *ngIf="product.promo !== 0; else noPromo">
+                <h6><sup class="promo-price">{{product.promo}}TND </sup> <s> .<sup> {{product.prix}}TND</sup></s></h6>
+            </ng-container>
+            <ng-template #noPromo>
+                <h6><sup>{{product.prix}}TND</sup></h6>
+            </ng-template>
+
+            <ul>
+                <li *ngFor="let star of [1, 2, 3, 4, 5]">
+                    <i class="fa fa-star checked"></i>
+                </li>
+            </ul>
+
+            <button class="btn btn-warning" (click)="ajouterAuPanier()" type="button" routerLink="/panier"> Ajouter au panier</button>
+        </div>
+    </div>
+</div>

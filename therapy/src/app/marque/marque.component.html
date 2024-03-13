@@ -1,0 +1,9 @@
+<!-- marque.component.html -->
+<div class="marque-container">
+
+    <div class="marque-item" *ngFor="let marque of marques">
+        <img [src]="marque.image">
+        <h3>{{marque.nom}}</h3>
+        <p>{{marque.description}}</p>
+    </div>
+</div>
